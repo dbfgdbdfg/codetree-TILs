@@ -8,36 +8,29 @@ for i in range(n):
 b_list=[]
 for i in a_list:
     nums=0
-    for q in range(2,i):        
-        if i%q==0:
-            b_list.append(q)
-            nums+=1
-        if nums==0:
-            b_list.append(i)
-
+    if i==2 or i==3 or i==5 or i==7:
+        b_list.append(i)
+    if i==6:
+        b_list.append(2)
+        b_list.append(3)
+    if i==4 or i==8 or i==9:
+        b_list.append(i)
+    if i==10:
+        b_list.append(2)
+        b_list.append(5)
 b__list=list(set(b_list))
 
 for a in b__list:
-    for w in b__list:
-        if w!=a and w%a==0:
-            b__list.remove(a)
-final=1
+    if a==3 and (9 in b__list or 6 in b__list):
+        b__list.remove(3)
+    elif a==4 and (8 in b__list):
+        b__list.remove(4)
+for a in b__list:
+    if a==2 and (4 in b__list or 6 in b__list or 8 in b__list):
+        b__list.remove(2)
+
+
+final=1    
 for i in b__list:
     final*=i
 print(final)
-
-'''
-b_list=[]
-c_list=[]
-
-for i in range(1,10):
-    t=nums/i
-    final=t
-    for q in a_list:        
-        c_list.append(t%q)
-        c__list=list(set(c_list))
-    if c__list==[0.0]:
-        b_list.append(final)
-print(b_list)       
-#print(int(min(b_list)))
-'''
