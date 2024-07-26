@@ -10,9 +10,9 @@ date=0
 for i in range(m1,m2):
     date+=month[i]
 date=date+d2-d1
-
+#만약 7이면
 want=(date-day_list)//7   #0
-want_1=(date)%7   #
+want_1=date-want*7
 if want_1>=day_list:
     want+=1
 print(want)
