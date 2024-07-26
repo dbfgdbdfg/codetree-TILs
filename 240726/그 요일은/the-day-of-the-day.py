@@ -11,7 +11,8 @@ for i in range(m1,m2):
     date+=month[i]
 date=date+d2-d1
 
-want=date%7
-if want<day_list:
-    want-=1
+want=(date-day_list)//7   #0
+want_1=(date)%7   #
+if want_1>=day_list:
+    want+=1
 print(want)
