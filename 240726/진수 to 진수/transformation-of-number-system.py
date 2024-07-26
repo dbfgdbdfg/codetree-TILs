@@ -8,7 +8,9 @@ lens=len(str(n)) #11이 경우 두글자
 ten_0=0
 ten_0=ten_0+n%10
 for i in range(lens-1,0,-1):
-    ten_0+=(n//(10**i))*a**(i-1)
+    ten_0+=(n//(10**i))*(a**i)
+    n=n%10**i
+
 ten=ten_0 #10진수로는 얼마인지
 #print(ten)
 nums=0
