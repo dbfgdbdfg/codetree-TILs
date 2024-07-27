@@ -12,6 +12,8 @@ def prime(n):
 
 
 for i in range(a,b+1):
-    if prime(i):
+    if i==1:
+        nums+=0
+    elif prime(i):
         nums+=i
 print(nums)
