@@ -16,7 +16,7 @@ if w[1]=="*":
 elif w[1]=="+":
     print(w1,"=",plus(a,b))
 elif w[1]=="-":
-    print(w1,"=",minuss(a,b))
+    print(w1,"=",minus(a,b))
 elif w[1]=="/":
     print(w1,"=",squa(a,b))
 else:
