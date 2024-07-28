@@ -1,10 +1,11 @@
 a=str(input())
-a_set={}
+a_list=[]
 
 def great(n):
     for i in range(len(n)):
-        a_set.add(n[i])
-    if len(a_set)>1:
+
+        a_list.append(n[i])
+    if len(set(a_list))>1:
         return True
 if great(a):
     print("Yes")
