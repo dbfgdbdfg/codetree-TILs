@@ -3,9 +3,9 @@ a_list=list(map(int,input().split()))
 
 
 def what(arr):
-    for i in arr:
-        if i%2==0:
-            arr[arr.index(i)]=i/2
+    for i in range(n):
+        if arr[i]%2==0:
+            arr[i]=arr[i]/2
 
 what(a_list)           
 for  i in a_list:
