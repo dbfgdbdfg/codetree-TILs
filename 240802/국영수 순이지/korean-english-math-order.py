@@ -9,7 +9,7 @@ class Great:
 a_list=[]
 for i in range(n):
     w=input().split()
-    a_list.append(Great(w[0],w[1],w[2],w[3]))
+    a_list.append(Great(w[0],int(w[1]),int(w[2]),int(w[3])))
 
 a_list.sort(key=lambda a:(a.kor,a.eng,a.mat) )
 
