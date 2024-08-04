@@ -13,15 +13,15 @@ for i in range(n):
         for t in range(a):
             a_list[first+t]="W"
             w_list.append(first+t)
-        first+=a
+        first=first+a-1
 
     if b=="L":
         for t in range(a):
-            a_list[first-t-1]="B"
-            b_list.append(first-t-1)
-        first-=a 
+            a_list[first-t]="B"
+            b_list.append(first-t)
+        first=first-a+1 
 
-
+#print(w_list,b_list)
 for i in w_list:
     if w_list.count(i)>=2 and b_list.count(i)>=2:
         a_list[i]="F"
