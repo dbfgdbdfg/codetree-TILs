@@ -13,37 +13,31 @@ for r in range(x11+1000,x22+1000):
         a_list[r][c]=0
 
 
-
-
-while x1<x11 and y1<y11:
-    if a_list[x1+1000][y1+1000]==1:
-        a=x1
-        b=y1
-        break
-    x1+=1
-    if a_list[x1+1000][y1+1000]==1:
-        a=x1
-        b=y1
-        break
-    x1-=1
-    y1+=1
-    
-
-while x2>x22 and y2>y22:
-    if a_list[x2+1000][y2+1000]==1:
-        c=x2
-        d=y2
-        break
-    x2-=1
-    if a_list[x2+1000][y2+1000]==1:
-        c=x2
-        d=y2
-        break
-    x2+=1
-    y2-=1    
-
-
 if x1>=x11 and y1>=y11 and x2<=x22 and y2<=y22:
     print("0")
+
 else:
+    while True:
+        a=x1
+        b=y1
+        if a_list[a+1000][b+1000]==1:
+            break
+    
+        a+=1
+        if a_list[a+1000][b+1000]==1:
+            break
+        a-=1
+        b+=1
+    
+
+    while True:
+        c=x2
+        d=y2
+        if a_list[c+1000][d+1000]==1:
+            break
+        c-=1
+        if a_list[c+1000][d+1000]==1:
+            break
+        c+=1
+        d-=1    
     print((c-a+1)*(d-b+1))
