@@ -1,7 +1,7 @@
 n=int(input())
 #www bbb fff
-first=1000
-a_list=[0]*2000
+first=10000
+a_list=[0]*20000
 w_list=[]
 b_list=[]
 
