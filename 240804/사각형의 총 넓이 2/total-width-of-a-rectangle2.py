@@ -1,5 +1,5 @@
 n=int(input())
-a_list = [[0]*10 for i in range (10)]
+a_list = [[0]*100 for i in range (100)]
 
 
 for i in range(n):
