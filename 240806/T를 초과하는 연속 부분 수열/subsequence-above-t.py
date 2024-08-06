@@ -14,7 +14,7 @@ if n==1:
 else:
     for i in range(n-1):
         if a_list[i]>t:
-            if a_list[i]<a_list[i+1]:
+            if a_list[i+1]>t:
                 nums+=1
                 b_list.append(nums)
             else:
