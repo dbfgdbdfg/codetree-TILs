@@ -2,7 +2,7 @@ n=int(input())
 a_list=[]
 for i in range(n):
     a_list.append(int(input()))
-nums=0
+nums=1
 b_list=[]
 
 
