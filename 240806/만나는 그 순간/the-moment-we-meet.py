@@ -33,9 +33,9 @@ for i in range(m):
 
 time=0
 while time<=sums:
+    if time==sums:
+        print("-1")
     if a_list[time]==b_list[time]:
         print(time+1)
         break
-    if time==sums:
-        print("-1")
     time+=1
