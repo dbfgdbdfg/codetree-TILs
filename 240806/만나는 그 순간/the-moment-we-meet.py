@@ -35,6 +35,7 @@ time=0
 while time<=sums:
     if time==sums:
         print("-1")
+        break
     if a_list[time]==b_list[time]:
         print(time+1)
         break
