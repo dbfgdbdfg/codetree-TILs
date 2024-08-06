@@ -20,5 +20,8 @@ for r in range(x1+1000,x2+1000):
             x_list.append(r-1000)
             y_list.append(c-1000)
 
+if len(x_list)>0 and len(y_list)>0 :
 
-print((max(x_list)-min(x_list) +1)*(max(y_list)-min(y_list)+1))
+    print((max(x_list)-min(x_list) +1)*(max(y_list)-min(y_list)+1))
+else:
+    print("0")
