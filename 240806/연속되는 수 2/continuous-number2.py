@@ -13,5 +13,8 @@ for i in range(n-1):
         b_list.append(nums)
     else:
         nums=1
+if len(b_list)=0:
+    print("0")
+else:
 
-print(max(b_list))
+    print(max(b_list))
