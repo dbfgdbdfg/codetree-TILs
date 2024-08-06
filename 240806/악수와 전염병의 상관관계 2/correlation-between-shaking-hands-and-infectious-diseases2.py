@@ -21,18 +21,18 @@ a_list[p-1]=1
 
 
 for i in range(t):
-    if a_list[programmer[i].x-1]==1:
-
+    if (a_list[programmer[i].x-1]==1) and (a_list[programmer[i].y-1]!=1):
         if k_list[programmer[i].x-1]<k:
             a_list[programmer[i].y-1]=1
             k_list[programmer[i].x-1]+=1
-        
-    elif a_list[programmer[i].y-1]==1:
-
+    if (a_list[programmer[i].y-1]==1) and (a_list[programmer[i].x-1]!=1):
         if k_list[programmer[i].y-1]<k:
             a_list[programmer[i].x-1]=1
             k_list[programmer[i].y-1]+=1
-        
+    if (a_list[programmer[i].y-1]==1) and (a_list[programmer[i].x-1]==1):
+        k_list[programmer[i].y-1]+=1
+        k_list[programmer[i].x-1]+=1
+
         
 #print(a_list)
 #print(k_list)
