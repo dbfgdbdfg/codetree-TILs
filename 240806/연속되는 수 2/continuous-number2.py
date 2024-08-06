@@ -3,7 +3,7 @@ a_list=[]
 for i in range(n):
     a_list.append(input())
 
-print(a_list)
+
 b_list=[]
 nums=1
 
