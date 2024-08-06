@@ -14,7 +14,7 @@ for i in range(n-1):
     else:
         nums=1
 if len(b_list)==0:
-    print("0")
+    print("1")
 else:
 
     print(max(b_list))
