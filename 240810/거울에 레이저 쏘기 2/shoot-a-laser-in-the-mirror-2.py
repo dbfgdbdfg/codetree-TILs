@@ -27,7 +27,7 @@ elif m//n==3:
     dire =1
 #m을 이용해서 시작 좌표 생성
 
-print(x,y,dire)
+
 
 ting=0
 
