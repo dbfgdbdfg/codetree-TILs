@@ -28,5 +28,6 @@ for Great in a_list:
     if Great.nx==0 and Great.ny==0:
         print(Great.time)
         found = True
+        break
 if not found:
     print("-1")
