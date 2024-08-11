@@ -10,5 +10,6 @@ for c in range(n):
     for r in range(n-2):
         sums+=a_list[r][c]
     b_list.append(sums)
+    sums=0
         
 print(max(b_list))
