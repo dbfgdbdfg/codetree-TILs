@@ -6,8 +6,8 @@ a_list= [list(map(int,input().split()))
 sums=0
 b_list=[]
 
-for c in range(n):
-    for r in range(n-2):
+for r in range(n):
+    for c in range(n-2):
         sums+=a_list[r][c]
     b_list.append(sums)
     sums=0
