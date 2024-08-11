@@ -8,7 +8,7 @@ b_list=[]
 
 for r in range(n):
     for c in range(n-2):
-        sums+=a_list[r][c]
+        sums=a_list[r][c]+a_list[r][c+1]+a_list[r][c+2]
     b_list.append(sums)
     sums=0
         
