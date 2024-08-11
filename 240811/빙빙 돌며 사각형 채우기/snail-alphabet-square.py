@@ -14,10 +14,10 @@ def Great(a,b,dire):
         return dire
 
 
-for i in range(1,n*m+1):
-    if 64+i>90:
-        i=i-26
-    a_list[r][c]=chr(64+i)
+for i in range(n*m):
+    if i//26>0:
+        i=i%26
+    a_list[r][c]=chr(65+i)
     nr=r+dx[dire]
     nc=c+dy[dire]
     #print(r,c,i,dire,nr,nc,"d")
