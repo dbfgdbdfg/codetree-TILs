@@ -29,7 +29,9 @@ for q in range(student):
         available_num.append(student)
     else:
         available_num.append(student-1)
+for q in range(student+1,n):
+    if ((cost-a_list[student-1].t+a_list[q].s+a_list[q].p//2))<=b:
+        available_num.append(student)
 
-
-
+#print(available_num)
 print(max(available_num))
