@@ -7,38 +7,29 @@ class Great:
 a_list=[]        
 for i in range(n):
     w=input().split()
+    #print(int(w[0]),int(w[1]),int(w[0])+int(w[1]))
     a_list.append(Great(int(w[0]),int(w[1]),int(w[0])+int(w[1])))
 
 cost=0
 student=0
+a_list.sort(key=lambda Great:Great.t)
+
 available_num=[]
 
-for i in range(n):
-    while cost<=b:    
-        cost+=a_list[i].t
-        student+=1
-
-
+for i in range(n):  
+    cost+=a_list[i].t
+    student+=1
+    if cost>=b:
+        #print(cost,student)
+        break
 
 for q in range(student):
-    if (cost-a_list[q].p/2)<=b:
+    #print(cost-a_list[q].p//2-a_list[q].s)
+    if (cost-a_list[q].p//2-a_list[q].s)<=b:
         available_num.append(student)
     else:
         available_num.append(student-1)
 
 
+
 print(max(available_num))
-    
-
-
-
-'''
-for i in range(n):
-    b_list=a_list.copy()
-    b_list[i].p=(b_list[i].p)/2
-    while cost<=b:
-        for q in range(n):  
-            cost=b_list[i].p+b_list[i].s
-    print(q)
-        
-'''
