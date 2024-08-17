@@ -39,7 +39,7 @@ b_list.sort(key=lambda Great:Great.s)
 
 for q in range(n-student):
     what=cost-a_list[student-1].t
-    if (what+b_list[q].s+b_list[q].p//2)<=b:
+    if (what+b_list[q].s+b_list[q].p//2)<b:
         student+=1
         available_num.append(student)
 
