@@ -24,8 +24,8 @@ for i in range(n):
         break
 
 for q in range(student):
-    #print(cost-a_list[q].p//2-a_list[q].s)
-    if (cost-a_list[q].p//2-a_list[q].s)<=b:
+    #print(cost-a_list[q].p//2)
+    if (cost-a_list[q].p//2)<=b:
         available_num.append(student)
     else:
         available_num.append(student-1)
