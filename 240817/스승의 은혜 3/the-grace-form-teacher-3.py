@@ -20,7 +20,7 @@ for i in range(n):
 
 
 
-for q in range(student+1):
+for q in range(student):
     if (cost-a_list[q].p/2)<=b:
         available_num.append(student)
     else:
