@@ -13,11 +13,14 @@ cost=0
 student=0
 available_num=[]
 
-while cost<=b:
-    for i in range(n):    
+for i in range(n):
+    while cost<=b:    
         cost+=a_list[i].t
         student+=1
-for q in range(n):
+
+
+
+for q in range(student+1):
     if (cost-a_list[q].p/2)<=b:
         available_num.append(student)
     else:
