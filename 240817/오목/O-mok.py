@@ -26,6 +26,10 @@ for r in range(14):
                 if a_list[r+2][c+2]==a_list[r+3][c+3]==a_list[r+4][c+4]==1:
                     black=True
                     black_list.append(Great(r+2,c+2))
+            if a_list[r-1][c+1]==1:
+                if a_list[r-2][c+2]==a_list[r-3][c+3]==a_list[r-4][c+4]==1:
+                    black=True
+                    black_list.append(Great(r-2,c+2))
         elif a_list[r][c]==2:
             if a_list[r+1][c]==2:
                 if a_list[r+2][c]==a_list[r+3][c]==a_list[r+4][c]==2:
@@ -39,6 +43,10 @@ for r in range(14):
                 if a_list[r+2][c+2]==a_list[r+3][c+3]==a_list[r+4][c+4]==2:
                     white=True
                     white_list.append(Great(r+2,c+2))
+            if a_list[r-1][c+1]==2:
+                if a_list[r-2][c+2]==a_list[r-3][c+3]==a_list[r-4][c+4]==2:
+                    white=True
+                    white_list.append(Great(r-2,c+2))
 
 
 if black==True:
