@@ -43,8 +43,8 @@ for r in range(19):
                 if a_list[r+2][c+2]==a_list[r+3][c+3]==a_list[r+4][c+4]==2:
                     white=True
                     white_list.append(Great(r+2,c+2))
-            if r-5>0 and c+4<19 and a_list[r-1][c+1]==2:
-                if a_list[r-2][c+2]==a_list[r-3][c+3]==a_list[r-4][c+4]==2:
+            if r-4>=0 and c+4<19 and a_list[r-1][c+1]==2:
+                if a_list[r-2][c+2]==2 and a_list[r-3][c+3]==2 and a_list[r-4][c+4]==2:
                     white=True
                     white_list.append(Great(r-2,c+2))
 
