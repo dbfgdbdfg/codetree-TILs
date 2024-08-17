@@ -2,7 +2,7 @@ a_list=list(map(int,input()))
 b_list=[]
 num_list=[]
 num=0
-for i in range(1,len(a_list)):
+for i in range(len(a_list)):
     b_list=a_list
     b_list[i]=(b_list[i]+1)%2
     for i in range(len(a_list)):
