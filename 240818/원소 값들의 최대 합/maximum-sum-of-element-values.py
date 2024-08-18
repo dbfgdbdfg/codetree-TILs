@@ -20,9 +20,6 @@ def what(i,a_list):
     move_total+=a_list[i-1].number
     movement+=1
     what(a_list[i-1].number,a_list)
-
-
-
 move_list=[]
 
 for i in range(1,n+1):
