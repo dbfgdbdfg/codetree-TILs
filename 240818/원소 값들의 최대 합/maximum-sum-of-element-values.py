@@ -28,8 +28,9 @@ move_list=[]
 for i in range(1,n+1):
     what(i,a_list)
     move_list.append(what(i,a_list))
-    move_total=0
     movement=0
+    move_total=0
+
 print(max(move_list))
     
     
