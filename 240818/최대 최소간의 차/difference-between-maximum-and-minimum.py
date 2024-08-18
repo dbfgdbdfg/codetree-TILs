@@ -1,57 +1,60 @@
-'''
-다 평균으로 만들면 다 5로 만들면
-1 2 2 2 0 이니까
-애는 64645
-전체에서 4배면 3
-그럼 일단 다 해서 평균구하기 만약 더 크면
-분산이용하나 -1 +2 -2 +2 0 이게 최소가 되도록 정한다음 K가 홀구면 +합이 더 큰쪽으로 2칸 1칸으로
-
-'''
 n,k=map(int,input().split())
 a_list=list(map(int,input().split()))
-#[6, 3, 7, 3, 5]   #print(a_list)
-average=round(sum(a_list)/n) #평균 반올림한거 기준이 될것이다
+a_list.sort()
+max_num=max(a_list)
+min_num=min(a_list)
+chai=max_num-min_num
+'''
 b_list=[]
-for i in range(n):
-    b_list.append(a_list[i]-average) 
-#[1, -2, 2, -2, 0]   #print(b_list)
+def Great(max_num,min_num,a_list):
+    #while sum(a_list)//n >= max_num-min_num//2 :
+        max_num-=1
+        for i in a_list:
+            if min_num<=i<=max_num:
+                continue
+            else:
+                b_list.append(min(abs(i-min_num),abs(i-max_num)))
+        print(b_list)
+'''
 
-if k%2==0:
-    k_chai=k//2
-    for i in range(n):
-        if (-k_chai)<=b_list[i] and b_list[i]<=k_chai:
-            b_list[i]=0
-        if b_list[i]>k_chai:
-            b_list[i]=abs(b_list[i]-k_chai)
-        if b_list[i]<(-k_chai):
-            b_list[i]=abs(b_list[i]+k_chai)
-    print(sum(b_list))
-minus_sum=0
-plus_sum=0
+sums=0
+if chai<=k:
+    print("0")
+else:
+    if sum(a_list)//n <= max_num-min_num//2:
+        while sum(a_list)//n <= max_num-min_num//2:
+            max_num-=1
+            if max_num-min_num==k:
+                #print(max_num,min_num)
+                break
+    if sum(a_list)//n > max_num-min_num//2:
+        while sum(a_list)//n >= max_num-min_num//2:
+            min_num-=1
+            if max_num-min_num==k:
+                #print(max_num,min_num)
+                break
+   
+    for i in a_list:
+        if i>max_num:
+            sums+=i-max_num
+        elif i<min_num:
+            sums+=min_num-i
+    print(sums)
 
-if k%2!=0:
-    k_chai=k//2
-    for i in range(n):
-        if b_list[i]>0:
-            plus_sum+=abs(b_list[i])
-        if b_list[i]<0:
-            minus_sum+=abs(b_list[i])
-    if plus_sum>=minus_sum:
-        for i in range(n):
-            if (-k_chai)<=b_list[i] and b_list[i]<=k_chai+1:
-                b_list[i]=0
-            if b_list[i]>k_chai+1:
-                b_list[i]=abs(b_list[i]-k_chai-1)
-            if b_list[i]<(-k_chai):
-                b_list[i]=abs(b_list[i]+k_chai)
-        print(sum(b_list))
-    else:
-        for i in range(n):
-            if (-k_chai-1)<=b_list[i] and b_list[i]<=k_chai:
-                b_list[i]=0
-            if b_list[i]>k_chai:
-                b_list[i]=abs(b_list[i]-k_chai)
-            if b_list[i]<(-k_chai-1):
-                b_list[i]=abs(b_list[i]+k_chai+1)
-    
-    print(sum(b_list))
+
+        #이러면 더 큰쪽에 치우쳐진거니까 큰것부터 내려가자
+
+
+
+
+
+
+
+
+
+
+
+#그럼 지금 최소 최대 차이 알고 그 차이가 k가 될려면 만야 차이가 10인데 k가 3이면 칸 2칸으로 가면 됨
+#차이 - k하고 2로 나누면 될것같은데 이게 2로 안 나누어지면 1 2로 해야되네 그럼 더 큰게 뭔지에 따라 달라지겠네 
+
+#최대와의 차이를 확인하기
