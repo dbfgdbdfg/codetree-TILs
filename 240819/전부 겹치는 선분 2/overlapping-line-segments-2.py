@@ -18,7 +18,7 @@ for i in range(n):
     del b_list[i]
     for q in range(n-1):
         for w in range(n-1):
-            if q<w:
+            if q!=w:
                 if b_list[q].x>b_list[w].y or b_list[w].x>b_list[q].y:
                     final= False
                 #print(i,q,w,final)
