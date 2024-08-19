@@ -13,13 +13,13 @@ for i in range(n):
 
 b_list=[]
 for i in range(n):
-    final=False
+    final=True
     b_list=a_list.copy()
     del b_list[i]
     for q in range(n-1):
         for w in range(q,n-1):
             if b_list[q].x<b_list[w].y or b_list[w].x<b_list[q].y:
-                final=True
+                final= False
     if final==True:
         print("Yes")
         break
