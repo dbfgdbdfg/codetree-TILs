@@ -41,6 +41,6 @@ if k%2!=0:
             elif a_list[i]<-k//2-1:
                 a_list[i]=a_list[i]+k//2+1
     
-        for i in range(n):
-            sums+=abs(a_list[i])
-        print(sums)
+    for i in range(n):
+        sums+=abs(a_list[i])
+    print(sums)
