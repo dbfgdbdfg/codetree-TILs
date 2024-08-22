@@ -18,9 +18,9 @@ for i in range(n):
             if b_list[q].y<b_list[w].x or b_list[w].y<b_list[q].x:
                 what=False
     if what == True:
-        print(max(b_list[0].x,b_list[1].x))
+        #print(max(b_list[0].x,b_list[1].x))
         for i in range(int(max(b_list[0].x,b_list[1].x)),int(min(b_list[0].y,b_list[1].y))):
-            for w in range(2,n):
+            for w in range(2,n-1):
                 if b_list[w].x>i or b_list[w].y<i:
                     what=False
 
