@@ -15,7 +15,7 @@ def Great(first,end,a_list):
 #3 20 27 62 
 first=a_list[0]
 end=first+k
-print(first,end)
+#print(first,end)
 sums=0
 sum_list=[]
 for i in range(first,a_list[-1]-k+1):
