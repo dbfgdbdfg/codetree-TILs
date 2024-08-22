@@ -6,7 +6,7 @@ class Great:
 a_list=[]
 for i in range(n):
     w=input().split()
-    a_list.append(Great(w[0],w[1]))
+    a_list.append(Great(int(w[0]),int(w[1])))
 b_list=[]
 what_list=[]
 for i in range(n):
@@ -17,9 +17,19 @@ for i in range(n):
         for w in range(q+1,n-1):
             if b_list[q].y<b_list[w].x or b_list[w].y<b_list[q].x:
                 what=False
+    if what == True:
+        print(max(b_list[0].x,b_list[1].x))
+        for i in range(int(max(b_list[0].x,b_list[1].x)),int(min(b_list[0].y,b_list[1].y))):
+            for w in range(2,n):
+                if b_list[w].x>i or b_list[w].y<i:
+                    what=False
+
+                
+    #print(i,what)
     what_list.append(what)
-    if what==True:
-            print("Yes")
-            break
+
+
 if True not in what_list:
     print("No")
+else:
+    print("Yes")
