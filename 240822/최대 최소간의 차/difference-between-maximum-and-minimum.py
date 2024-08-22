@@ -1,46 +1,25 @@
 n,k=map(int,input().split())
 a_list=list(map(int,input().split()))
 a_list.sort()
-a_list_sum=sum(a_list)
-#print(a_list) #[3, 3, 5, 6, 7]
-first_gi=a_list[n//2]
-#print(first_gi) #5
-for i in range(n):
-    a_list[i]=a_list[i]-first_gi
-#print(a_list) #[-2, -2, 0, 1, 2]
-
-sums=0
-
-if k%2==0:
-    for i in range(n):
-        if a_list[i]<=k//2 and a_list[i]>=-k//2:
+b_list=[]
+def Great(first,end,a_list):
+    for i in range(len(a_list)):
+        if a_list[i]>=first and a_list[i]<=end:
             a_list[i]=0
-        elif a_list[i]>k//2:
-            a_list[i]=a_list[i]-k//2
-        elif a_list[i]<-k//2:
-            a_list[i]=a_list[i]+k//2
-    for i in range(n):
-        sums+=abs(a_list[i])
-    print(sums)
-        
-if k%2!=0:
-    if a_list_sum//n >= first_gi:
-        for i in range(n):
-            if a_list[i]<=k//2+1 and a_list[i]>=-k//2:
-                a_list[i]=0
-            elif a_list[i]>k//2+1:
-                a_list[i]=a_list[i]-k//2-1
-            elif a_list[i]<-k//2:
-                a_list[i]=a_list[i]+k//2
-    if a_list_sum//n < first_gi:
-        for i in range(n):
-            if a_list[i]<=k//2 and a_list[i]>=-k//2-1:
-                a_list[i]=0
-            elif a_list[i]>k//2:
-                a_list[i]=a_list[i]-k//2
-            elif a_list[i]<-k//2-1:
-                a_list[i]=a_list[i]+k//2+1
+        elif a_list[i]<first:
+            a_list[i]=first-a_list[i]
+        elif a_list[i]>end:
+            a_list[i]=a_list[i]-end
+    #print(a_list)
+    return sum(a_list)
+#3 20 27 62 
+first=a_list[0]
+end=first+k
+print(first,end)
+sums=0
+sum_list=[]
+for i in range(first,a_list[-1]-k+1):
+    sum_list.append(Great(i,i+k,a_list))
     
-    for i in range(n):
-        sums+=abs(a_list[i])
-    print(sums)
+
+print(min(sum_list))
