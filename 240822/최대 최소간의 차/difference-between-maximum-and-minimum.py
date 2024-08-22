@@ -10,7 +10,7 @@ def Great(first,end,a_list):
             a_list[i]=first-a_list[i]
         elif a_list[i]>end:
             a_list[i]=a_list[i]-end
-    #print(a_list)
+    print(a_list)
     return sum(a_list)
 #3 20 27 62 
 first=a_list[0]
