@@ -1,40 +1,46 @@
-def minimum_cost_to_limit_range(nums, n, k):
-    nums.sort()
+n,k=map(int,input().split())
+a_list=list(map(int,input().split()))
+a_list.sort()
+a_list_sum=sum(a_list)
+#print(a_list) #[3, 3, 5, 6, 7]
+first_gi=a_list[n//2]
+#print(first_gi) #5
+for i in range(n):
+    a_list[i]=a_list[i]-first_gi
+#print(a_list) #[-2, -2, 0, 1, 2]
 
-    # 비용 계산 함수
-    def calculate_cost(target):
-        cost_increase = 0
-        cost_decrease = 0
+sums=0
 
-        for num in nums:
-            if num < target:
-                cost_increase += target - num
-            elif num > target + k:
-                cost_decrease += num - (target + k)
-
-        return max(cost_increase, cost_decrease)
-
-    left, right = 0, max(nums)
-    result = float('inf')
-
-    while left <= right:
-        mid = (left + right) // 2
-        current_cost = calculate_cost(mid)
-
-        result = min(result, current_cost)
-
-        # 이진 탐색 범위 조정
-        if calculate_cost(mid) <= calculate_cost(mid + 1):
-            right = mid - 1
-        else:
-            left = mid + 1
-
-    return result
-
-# 입력 받기
-n, k = map(int, input().split())
-nums = list(map(int, input().split()))
-
-# 최소 비용 계산
-min_cost = minimum_cost_to_limit_range(nums, n, k)
-print(min_cost)
+if k%2==0:
+    for i in range(n):
+        if a_list[i]<=k//2 and a_list[i]>=-k//2:
+            a_list[i]=0
+        elif a_list[i]>k//2:
+            a_list[i]=a_list[i]-k//2
+        elif a_list[i]<-k//2:
+            a_list[i]=a_list[i]+k//2
+    for i in range(n):
+        sums+=abs(a_list[i])
+    print(sums)
+        
+if k%2!=0:
+    if a_list_sum//n >= first_gi:
+        for i in range(n):
+            if a_list[i]<=k//2+1 and a_list[i]>=-k//2:
+                a_list[i]=0
+            elif a_list[i]>k//2+1:
+                a_list[i]=a_list[i]-k//2-1
+            elif a_list[i]<-k//2:
+                a_list[i]=a_list[i]+k//2
+    if a_list_sum//n < first_gi:
+        for i in range(n):
+            if a_list[i]<=k//2 and a_list[i]>=-k//2-1:
+                a_list[i]=0
+            elif a_list[i]>k//2:
+                a_list[i]=a_list[i]-k//2
+            elif a_list[i]<-k//2-1:
+                a_list[i]=a_list[i]+k//2+1
+    
+        for i in range(n):
+            sums+=abs(a_list[i])
+        print(sums)
